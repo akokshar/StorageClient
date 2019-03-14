@@ -7,25 +7,70 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7705984322394BEC003790BC /* StoreConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7705984222394BEC003790BC /* StoreConfig.swift */; };
+		7705984422394BEC003790BC /* StoreConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7705984222394BEC003790BC /* StoreConfig.swift */; };
+		7732BD0D2233B9C100300B44 /* StoreDomains.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7732BD0B2233B9C100300B44 /* StoreDomains.swift */; };
+		7732BD0E2233CAF100300B44 /* StoreDB.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 7752019A2206F3E8006067BF /* StoreDB.xcdatamodeld */; };
+		7732BD162239341B00300B44 /* DocumentActionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7732BD152239341B00300B44 /* DocumentActionViewController.swift */; };
+		7732BD192239341B00300B44 /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7732BD172239341B00300B44 /* MainInterface.storyboard */; };
+		7732BD1D2239341B00300B44 /* StorageFileProviderUI.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 7732BD132239341B00300B44 /* StorageFileProviderUI.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		7743055D220740D800C41075 /* StoreItem+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77430559220740D800C41075 /* StoreItem+CoreDataClass.swift */; };
+		7752018C22059918006067BF /* StoreDB.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77520189220342B6006067BF /* StoreDB.swift */; };
 		7776E4B921F0A8F20005D4DF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7776E4B821F0A8F20005D4DF /* AppDelegate.swift */; };
 		7776E4BB21F0A8F20005D4DF /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7776E4BA21F0A8F20005D4DF /* ViewController.swift */; };
 		7776E4BE21F0A8F20005D4DF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7776E4BC21F0A8F20005D4DF /* Main.storyboard */; };
 		7776E4C021F0A8F20005D4DF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7776E4BF21F0A8F20005D4DF /* Assets.xcassets */; };
 		7776E4C321F0A8F20005D4DF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7776E4C121F0A8F20005D4DF /* LaunchScreen.storyboard */; };
-		7776E4CE21F0A8F20005D4DF /* StorageClientTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7776E4CD21F0A8F20005D4DF /* StorageClientTests.swift */; };
+		77997F3322157B860025B92E /* StorageAPITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7776E4CD21F0A8F20005D4DF /* StorageAPITests.swift */; };
+		77997F36221826AF0025B92E /* StoreAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7776E4D921F0AA160005D4DF /* StoreAPI.swift */; };
+		77B80B4F21FF09080087B7C2 /* FileProviderExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77B80B4E21FF09080087B7C2 /* FileProviderExtension.swift */; };
+		77B80B5321FF09080087B7C2 /* FileProviderEnumerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77B80B5221FF09080087B7C2 /* FileProviderEnumerator.swift */; };
+		77B80B5821FF09080087B7C2 /* StorageFileProvider.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 77B80B4C21FF09080087B7C2 /* StorageFileProvider.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		7776E4CA21F0A8F20005D4DF /* PBXContainerItemProxy */ = {
+		7732BD1B2239341B00300B44 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 7776E4AD21F0A8F10005D4DF /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = 7776E4B421F0A8F10005D4DF;
-			remoteInfo = StorageClient;
+			remoteGlobalIDString = 7732BD122239341B00300B44;
+			remoteInfo = StorageFileProviderUI;
+		};
+		77B80B5621FF09080087B7C2 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 7776E4AD21F0A8F10005D4DF /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 77B80B4B21FF09080087B7C2;
+			remoteInfo = StorageFileProvider;
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		77B80B5C21FF09080087B7C2 /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				77B80B5821FF09080087B7C2 /* StorageFileProvider.appex in Embed App Extensions */,
+				7732BD1D2239341B00300B44 /* StorageFileProviderUI.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
+		7705984222394BEC003790BC /* StoreConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreConfig.swift; sourceTree = "<group>"; };
+		7732BD0B2233B9C100300B44 /* StoreDomains.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreDomains.swift; sourceTree = "<group>"; };
+		7732BD132239341B00300B44 /* StorageFileProviderUI.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = StorageFileProviderUI.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		7732BD152239341B00300B44 /* DocumentActionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DocumentActionViewController.swift; sourceTree = "<group>"; };
+		7732BD182239341B00300B44 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainInterface.storyboard; sourceTree = "<group>"; };
+		7732BD1A2239341B00300B44 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7732BD21223936E200300B44 /* StorageFileProviderUI.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = StorageFileProviderUI.entitlements; sourceTree = "<group>"; };
+		77430559220740D800C41075 /* StoreItem+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "StoreItem+CoreDataClass.swift"; sourceTree = "<group>"; };
+		77520189220342B6006067BF /* StoreDB.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreDB.swift; sourceTree = "<group>"; };
+		7752019B2206F3E8006067BF /* StoreDB.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = StoreDB.xcdatamodel; sourceTree = "<group>"; };
 		7776E4B521F0A8F10005D4DF /* StorageClient.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StorageClient.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7776E4B821F0A8F20005D4DF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7776E4BA21F0A8F20005D4DF /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -33,12 +78,26 @@
 		7776E4BF21F0A8F20005D4DF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7776E4C221F0A8F20005D4DF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		7776E4C421F0A8F20005D4DF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		7776E4C921F0A8F20005D4DF /* StorageClientTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = StorageClientTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		7776E4CD21F0A8F20005D4DF /* StorageClientTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageClientTests.swift; sourceTree = "<group>"; };
+		7776E4C921F0A8F20005D4DF /* StorageTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = StorageTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		7776E4CD21F0A8F20005D4DF /* StorageAPITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageAPITests.swift; sourceTree = "<group>"; };
 		7776E4CF21F0A8F20005D4DF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7776E4D921F0AA160005D4DF /* StoreAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreAPI.swift; sourceTree = "<group>"; };
+		7776E4DB21F21A220005D4DF /* StorageClient.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = StorageClient.entitlements; sourceTree = "<group>"; };
+		77B80B4C21FF09080087B7C2 /* StorageFileProvider.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = StorageFileProvider.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		77B80B4E21FF09080087B7C2 /* FileProviderExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileProviderExtension.swift; sourceTree = "<group>"; };
+		77B80B5221FF09080087B7C2 /* FileProviderEnumerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileProviderEnumerator.swift; sourceTree = "<group>"; };
+		77B80B5421FF09080087B7C2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		77B80B5521FF09080087B7C2 /* StorageFileProvider.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = StorageFileProvider.entitlements; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		7732BD102239341B00300B44 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		7776E4B221F0A8F10005D4DF /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -53,14 +112,35 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		77B80B4921FF09080087B7C2 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		7732BD142239341B00300B44 /* StorageFileProviderUI */ = {
+			isa = PBXGroup;
+			children = (
+				7732BD21223936E200300B44 /* StorageFileProviderUI.entitlements */,
+				7732BD152239341B00300B44 /* DocumentActionViewController.swift */,
+				7732BD172239341B00300B44 /* MainInterface.storyboard */,
+				7732BD1A2239341B00300B44 /* Info.plist */,
+			);
+			path = StorageFileProviderUI;
+			sourceTree = "<group>";
+		};
 		7776E4AC21F0A8F10005D4DF = {
 			isa = PBXGroup;
 			children = (
 				7776E4B721F0A8F10005D4DF /* StorageClient */,
-				7776E4CC21F0A8F20005D4DF /* StorageClientTests */,
+				7776E4D821F0A9900005D4DF /* Storage */,
+				7776E4CC21F0A8F20005D4DF /* StorageTests */,
+				77B80B4D21FF09080087B7C2 /* StorageFileProvider */,
+				7732BD142239341B00300B44 /* StorageFileProviderUI */,
 				7776E4B621F0A8F10005D4DF /* Products */,
 			);
 			sourceTree = "<group>";
@@ -69,7 +149,9 @@
 			isa = PBXGroup;
 			children = (
 				7776E4B521F0A8F10005D4DF /* StorageClient.app */,
-				7776E4C921F0A8F20005D4DF /* StorageClientTests.xctest */,
+				7776E4C921F0A8F20005D4DF /* StorageTests.xctest */,
+				77B80B4C21FF09080087B7C2 /* StorageFileProvider.appex */,
+				7732BD132239341B00300B44 /* StorageFileProviderUI.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -77,6 +159,7 @@
 		7776E4B721F0A8F10005D4DF /* StorageClient */ = {
 			isa = PBXGroup;
 			children = (
+				7776E4DB21F21A220005D4DF /* StorageClient.entitlements */,
 				7776E4B821F0A8F20005D4DF /* AppDelegate.swift */,
 				7776E4BA21F0A8F20005D4DF /* ViewController.swift */,
 				7776E4BC21F0A8F20005D4DF /* Main.storyboard */,
@@ -87,18 +170,59 @@
 			path = StorageClient;
 			sourceTree = "<group>";
 		};
-		7776E4CC21F0A8F20005D4DF /* StorageClientTests */ = {
+		7776E4CC21F0A8F20005D4DF /* StorageTests */ = {
 			isa = PBXGroup;
 			children = (
-				7776E4CD21F0A8F20005D4DF /* StorageClientTests.swift */,
+				7776E4CD21F0A8F20005D4DF /* StorageAPITests.swift */,
 				7776E4CF21F0A8F20005D4DF /* Info.plist */,
 			);
-			path = StorageClientTests;
+			path = StorageTests;
+			sourceTree = "<group>";
+		};
+		7776E4D821F0A9900005D4DF /* Storage */ = {
+			isa = PBXGroup;
+			children = (
+				77430559220740D800C41075 /* StoreItem+CoreDataClass.swift */,
+				7776E4D921F0AA160005D4DF /* StoreAPI.swift */,
+				77520189220342B6006067BF /* StoreDB.swift */,
+				7732BD0B2233B9C100300B44 /* StoreDomains.swift */,
+				7705984222394BEC003790BC /* StoreConfig.swift */,
+				7752019A2206F3E8006067BF /* StoreDB.xcdatamodeld */,
+			);
+			path = Storage;
+			sourceTree = "<group>";
+		};
+		77B80B4D21FF09080087B7C2 /* StorageFileProvider */ = {
+			isa = PBXGroup;
+			children = (
+				77B80B4E21FF09080087B7C2 /* FileProviderExtension.swift */,
+				77B80B5221FF09080087B7C2 /* FileProviderEnumerator.swift */,
+				77B80B5421FF09080087B7C2 /* Info.plist */,
+				77B80B5521FF09080087B7C2 /* StorageFileProvider.entitlements */,
+			);
+			path = StorageFileProvider;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		7732BD122239341B00300B44 /* StorageFileProviderUI */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 7732BD1E2239341B00300B44 /* Build configuration list for PBXNativeTarget "StorageFileProviderUI" */;
+			buildPhases = (
+				7732BD0F2239341B00300B44 /* Sources */,
+				7732BD102239341B00300B44 /* Frameworks */,
+				7732BD112239341B00300B44 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = StorageFileProviderUI;
+			productName = StorageFileProviderUI;
+			productReference = 7732BD132239341B00300B44 /* StorageFileProviderUI.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
 		7776E4B421F0A8F10005D4DF /* StorageClient */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 7776E4D221F0A8F20005D4DF /* Build configuration list for PBXNativeTarget "StorageClient" */;
@@ -106,19 +230,22 @@
 				7776E4B121F0A8F10005D4DF /* Sources */,
 				7776E4B221F0A8F10005D4DF /* Frameworks */,
 				7776E4B321F0A8F10005D4DF /* Resources */,
+				77B80B5C21FF09080087B7C2 /* Embed App Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				77B80B5721FF09080087B7C2 /* PBXTargetDependency */,
+				7732BD1C2239341B00300B44 /* PBXTargetDependency */,
 			);
 			name = StorageClient;
 			productName = StorageClient;
 			productReference = 7776E4B521F0A8F10005D4DF /* StorageClient.app */;
 			productType = "com.apple.product-type.application";
 		};
-		7776E4C821F0A8F20005D4DF /* StorageClientTests */ = {
+		7776E4C821F0A8F20005D4DF /* StorageTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 7776E4D521F0A8F20005D4DF /* Build configuration list for PBXNativeTarget "StorageClientTests" */;
+			buildConfigurationList = 7776E4D521F0A8F20005D4DF /* Build configuration list for PBXNativeTarget "StorageTests" */;
 			buildPhases = (
 				7776E4C521F0A8F20005D4DF /* Sources */,
 				7776E4C621F0A8F20005D4DF /* Frameworks */,
@@ -127,12 +254,28 @@
 			buildRules = (
 			);
 			dependencies = (
-				7776E4CB21F0A8F20005D4DF /* PBXTargetDependency */,
 			);
-			name = StorageClientTests;
+			name = StorageTests;
 			productName = StorageClientTests;
-			productReference = 7776E4C921F0A8F20005D4DF /* StorageClientTests.xctest */;
+			productReference = 7776E4C921F0A8F20005D4DF /* StorageTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		77B80B4B21FF09080087B7C2 /* StorageFileProvider */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 77B80B5B21FF09080087B7C2 /* Build configuration list for PBXNativeTarget "StorageFileProvider" */;
+			buildPhases = (
+				77B80B4821FF09080087B7C2 /* Sources */,
+				77B80B4921FF09080087B7C2 /* Frameworks */,
+				77B80B4A21FF09080087B7C2 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = StorageFileProvider;
+			productName = StorageFileProvider;
+			productReference = 77B80B4C21FF09080087B7C2 /* StorageFileProvider.appex */;
+			productType = "com.apple.product-type.app-extension";
 		};
 /* End PBXNativeTarget section */
 
@@ -144,12 +287,35 @@
 				LastUpgradeCheck = 1010;
 				ORGANIZATIONNAME = "Koksharov Alexandr";
 				TargetAttributes = {
+					7732BD122239341B00300B44 = {
+						CreatedOnToolsVersion = 10.1;
+						SystemCapabilities = {
+							com.apple.ApplicationGroups.iOS = {
+								enabled = 1;
+							};
+						};
+					};
 					7776E4B421F0A8F10005D4DF = {
 						CreatedOnToolsVersion = 10.1;
+						SystemCapabilities = {
+							com.apple.ApplicationGroups.iOS = {
+								enabled = 1;
+							};
+							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
+						};
 					};
 					7776E4C821F0A8F20005D4DF = {
 						CreatedOnToolsVersion = 10.1;
-						TestTargetID = 7776E4B421F0A8F10005D4DF;
+					};
+					77B80B4B21FF09080087B7C2 = {
+						CreatedOnToolsVersion = 10.1;
+						SystemCapabilities = {
+							com.apple.ApplicationGroups.iOS = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -167,12 +333,22 @@
 			projectRoot = "";
 			targets = (
 				7776E4B421F0A8F10005D4DF /* StorageClient */,
-				7776E4C821F0A8F20005D4DF /* StorageClientTests */,
+				7776E4C821F0A8F20005D4DF /* StorageTests */,
+				77B80B4B21FF09080087B7C2 /* StorageFileProvider */,
+				7732BD122239341B00300B44 /* StorageFileProviderUI */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		7732BD112239341B00300B44 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7732BD192239341B00300B44 /* MainInterface.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		7776E4B321F0A8F10005D4DF /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -190,13 +366,29 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		77B80B4A21FF09080087B7C2 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		7732BD0F2239341B00300B44 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7732BD162239341B00300B44 /* DocumentActionViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		7776E4B121F0A8F10005D4DF /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7705984322394BEC003790BC /* StoreConfig.swift in Sources */,
 				7776E4BB21F0A8F20005D4DF /* ViewController.swift in Sources */,
 				7776E4B921F0A8F20005D4DF /* AppDelegate.swift in Sources */,
 			);
@@ -206,21 +398,49 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7776E4CE21F0A8F20005D4DF /* StorageClientTests.swift in Sources */,
+				77997F3322157B860025B92E /* StorageAPITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		77B80B4821FF09080087B7C2 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7743055D220740D800C41075 /* StoreItem+CoreDataClass.swift in Sources */,
+				77B80B4F21FF09080087B7C2 /* FileProviderExtension.swift in Sources */,
+				7752018C22059918006067BF /* StoreDB.swift in Sources */,
+				77B80B5321FF09080087B7C2 /* FileProviderEnumerator.swift in Sources */,
+				7732BD0D2233B9C100300B44 /* StoreDomains.swift in Sources */,
+				7732BD0E2233CAF100300B44 /* StoreDB.xcdatamodeld in Sources */,
+				77997F36221826AF0025B92E /* StoreAPI.swift in Sources */,
+				7705984422394BEC003790BC /* StoreConfig.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		7776E4CB21F0A8F20005D4DF /* PBXTargetDependency */ = {
+		7732BD1C2239341B00300B44 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 7776E4B421F0A8F10005D4DF /* StorageClient */;
-			targetProxy = 7776E4CA21F0A8F20005D4DF /* PBXContainerItemProxy */;
+			target = 7732BD122239341B00300B44 /* StorageFileProviderUI */;
+			targetProxy = 7732BD1B2239341B00300B44 /* PBXContainerItemProxy */;
+		};
+		77B80B5721FF09080087B7C2 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 77B80B4B21FF09080087B7C2 /* StorageFileProvider */;
+			targetProxy = 77B80B5621FF09080087B7C2 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
+		7732BD172239341B00300B44 /* MainInterface.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				7732BD182239341B00300B44 /* Base */,
+			);
+			name = MainInterface.storyboard;
+			sourceTree = "<group>";
+		};
 		7776E4BC21F0A8F20005D4DF /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -240,6 +460,46 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		7732BD1F2239341B00300B44 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = StorageFileProviderUI/StorageFileProviderUI.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = Y2267ZRDP8;
+				INFOPLIST_FILE = StorageFileProviderUI/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = lex.home.StorageClient.StorageFileProviderUI;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		7732BD202239341B00300B44 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = StorageFileProviderUI/StorageFileProviderUI.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = Y2267ZRDP8;
+				INFOPLIST_FILE = StorageFileProviderUI/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = lex.home.StorageClient.StorageFileProviderUI;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
 		7776E4D021F0A8F20005D4DF /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -359,7 +619,10 @@
 		7776E4D321F0A8F20005D4DF /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = StorageClient/StorageClient.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = Y2267ZRDP8;
 				INFOPLIST_FILE = StorageClient/Info.plist;
@@ -369,6 +632,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = lex.home.StorageClient;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -377,7 +641,10 @@
 		7776E4D421F0A8F20005D4DF /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = StorageClient/StorageClient.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = Y2267ZRDP8;
 				INFOPLIST_FILE = StorageClient/Info.plist;
@@ -387,6 +654,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = lex.home.StorageClient;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -396,10 +664,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = Y2267ZRDP8;
-				INFOPLIST_FILE = StorageClientTests/Info.plist;
+				INFOPLIST_FILE = StorageTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -409,7 +676,6 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/StorageClient.app/StorageClient";
 			};
 			name = Debug;
 		};
@@ -417,10 +683,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = Y2267ZRDP8;
-				INFOPLIST_FILE = StorageClientTests/Info.plist;
+				INFOPLIST_FILE = StorageTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -430,13 +695,61 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/StorageClient.app/StorageClient";
+			};
+			name = Release;
+		};
+		77B80B5921FF09080087B7C2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = StorageFileProvider/StorageFileProvider.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = Y2267ZRDP8;
+				INFOPLIST_FILE = StorageFileProvider/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = lex.home.StorageClient.StorageFileProvider;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		77B80B5A21FF09080087B7C2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = StorageFileProvider/StorageFileProvider.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = Y2267ZRDP8;
+				INFOPLIST_FILE = StorageFileProvider/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = lex.home.StorageClient.StorageFileProvider;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		7732BD1E2239341B00300B44 /* Build configuration list for PBXNativeTarget "StorageFileProviderUI" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7732BD1F2239341B00300B44 /* Debug */,
+				7732BD202239341B00300B44 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		7776E4B021F0A8F10005D4DF /* Build configuration list for PBXProject "StorageClient" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -455,7 +768,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		7776E4D521F0A8F20005D4DF /* Build configuration list for PBXNativeTarget "StorageClientTests" */ = {
+		7776E4D521F0A8F20005D4DF /* Build configuration list for PBXNativeTarget "StorageTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				7776E4D621F0A8F20005D4DF /* Debug */,
@@ -464,7 +777,29 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
+		77B80B5B21FF09080087B7C2 /* Build configuration list for PBXNativeTarget "StorageFileProvider" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				77B80B5921FF09080087B7C2 /* Debug */,
+				77B80B5A21FF09080087B7C2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		7752019A2206F3E8006067BF /* StoreDB.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				7752019B2206F3E8006067BF /* StoreDB.xcdatamodel */,
+			);
+			currentVersion = 7752019B2206F3E8006067BF /* StoreDB.xcdatamodel */;
+			path = StoreDB.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 7776E4AD21F0A8F10005D4DF /* Project object */;
 }

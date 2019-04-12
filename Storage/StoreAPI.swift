@@ -78,12 +78,12 @@ private class StoreServer {
     
     private init() {
         // get url from shared config
-        self.url = URL(string: "http://localhost:8080/store/")!
+        self.url = URL(string: "http://localhost:8080/")!
     }
  
-    func urlRequest(_ method: String = "GET", withQueryItems queryItems: [URLQueryItem] = []) -> URLRequest {
+    func urlRequest(_ method: String = "GET", withQueryItems queryItems: [URLQueryItem] = [], inDomain domain: String) -> URLRequest {
         // optional unwrap should not fail, assuming that correct URL was set in init()
-        var urlComponents = URLComponents(url: self.url, resolvingAgainstBaseURL: false)!
+        var urlComponents = URLComponents(url: self.url.appendingPathComponent(domain), resolvingAgainstBaseURL: false)!
         urlComponents.queryItems = queryItems
         
         // same as above, should not fail
@@ -164,11 +164,14 @@ class StoreAPI {
         return result!
     }
     
-    func storeItemInfo(withIdentifier identifier: String) throws -> FileItemInfo {
-        let request = server.urlRequest(withQueryItems: [
-            URLQueryItem(name: "id", value: identifier),
-            URLQueryItem(name: "cmd", value: "info")
-        ])
+    func storeItemInfo(withIdentifier identifier: String, inDomain domain: String) throws -> FileItemInfo {
+        let request = server.urlRequest(
+            withQueryItems: [
+                URLQueryItem(name: "id", value: identifier),
+                URLQueryItem(name: "cmd", value: "info")
+            ],
+            inDomain: domain
+        )
         do {
             return try storeRequestInfo(withRequest: request)
         } catch let e {
@@ -176,13 +179,16 @@ class StoreAPI {
         }
     }
     
-    func storeEnumerateChangesToContainer(withIdentifier identifier: String, from anchor: Int64 = 0, num count: Int = 128) throws -> DirectoryChanges {
-        let request = server.urlRequest(withQueryItems: [
-            URLQueryItem(name: "id", value: identifier),
-            URLQueryItem(name: "cmd", value: "list"),
-            URLQueryItem(name: "anchor", value: String(anchor)),
-            URLQueryItem(name: "count", value: String(count))
-        ])
+    func storeEnumerateChangesToContainer(withIdentifier identifier: String, from anchor: Int64 = 0, num count: Int = 128, inDomain domain: String) throws -> DirectoryChanges {
+        let request = server.urlRequest(
+            withQueryItems: [
+                URLQueryItem(name: "id", value: identifier),
+                URLQueryItem(name: "cmd", value: "list"),
+                URLQueryItem(name: "anchor", value: String(anchor)),
+                URLQueryItem(name: "count", value: String(count))
+            ],
+            inDomain: domain
+        )
         do {
             return try storeRequestInfo(withRequest: request)
         } catch let e {
@@ -190,12 +196,16 @@ class StoreAPI {
         }
     }
     
-    func storeCreateDirectory(withName name: String, parentIdentifier parentId: String) throws -> FileItemInfo {
-        let request = server.urlRequest("POST", withQueryItems: [
-            URLQueryItem(name: "parentId", value: parentId),
-            URLQueryItem(name: "name", value: name),
-            URLQueryItem(name: "cmd", value: "createDir"),
-        ])
+    func storeCreateDirectory(withName name: String, parentIdentifier parentId: String, inDomain domain: String) throws -> FileItemInfo {
+        let request = server.urlRequest(
+            "POST",
+            withQueryItems: [
+                URLQueryItem(name: "parentId", value: parentId),
+                URLQueryItem(name: "name", value: name),
+                URLQueryItem(name: "cmd", value: "createDir"),
+            ],
+            inDomain: domain
+        )
         do {
             return try storeRequestInfo(withRequest: request)
         } catch let e {
@@ -223,22 +233,30 @@ class StoreBackgroundSession: NSObject, URLSessionDelegate, URLSessionTaskDelega
     
     public static let backgroundSession = StoreBackgroundSession()
     
-    func uploadTask(withId taskId: String, forFileAt fileURL: URL, name: String, parentId: String) -> URLSessionUploadTask {
-        let request = server.urlRequest("POST", withQueryItems: [
-            URLQueryItem(name: "parentId", value: parentId),
-            URLQueryItem(name: "name", value: name)
-        ])
+    func uploadTask(withId taskId: String, forFileAt fileURL: URL, name: String, parentId: String, inDomain domain: String) -> URLSessionUploadTask {
+        let request = server.urlRequest(
+            "POST",
+            withQueryItems: [
+                URLQueryItem(name: "parentId", value: parentId),
+                URLQueryItem(name: "name", value: name)
+            ],
+            inDomain: domain
+        )
         let task = self.session.uploadTask(with: request, fromFile: fileURL)
         task.taskDescription = taskId
         return task
     }
     
-    func dataTask(withId taskId: String, toCreateDirectory name: String, parentId: String, delay: Date? = nil) -> URLSessionDataTask {
-        let request = server.urlRequest("POST", withQueryItems: [
-            URLQueryItem(name: "cmd", value: "createDir"),
-            URLQueryItem(name: "parentId", value: parentId),
-            URLQueryItem(name: "name", value: name)
-            ])
+    func dataTask(withId taskId: String, toCreateDirectory name: String, parentId: String, delay: Date? = nil, inDomain domain: String) -> URLSessionDataTask {
+        let request = server.urlRequest(
+            "POST",
+            withQueryItems: [
+                URLQueryItem(name: "cmd", value: "createDir"),
+                URLQueryItem(name: "parentId", value: parentId),
+                URLQueryItem(name: "name", value: name)
+            ],
+            inDomain: domain
+        )
         
         let task = self.session.dataTask(with: request)
         task.taskDescription = taskId
@@ -246,10 +264,13 @@ class StoreBackgroundSession: NSObject, URLSessionDelegate, URLSessionTaskDelega
         return task
     }
     
-    func downloadTask(withId taskId: String, forItem itemId: String) -> URLSessionDownloadTask {
-        let request = server.urlRequest(withQueryItems: [
-            URLQueryItem(name: "id", value: itemId)
-            ])
+    func downloadTask(withId taskId: String, forItem itemId: String, inDomain domain: String) -> URLSessionDownloadTask {
+        let request = server.urlRequest(
+            withQueryItems: [
+                URLQueryItem(name: "id", value: itemId)
+            ],
+            inDomain: domain
+        )
         let task = self.session.downloadTask(with: request)
         task.taskDescription = taskId
         return task

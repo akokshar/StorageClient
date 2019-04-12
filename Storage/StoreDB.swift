@@ -159,7 +159,7 @@ class StoreDB {
         print("syncChanges for \(identifier)")
         
         guard
-            let changes = try? StoreAPI.session.storeEnumerateChangesToContainer(withIdentifier: identifier, from: anchor, num: count),
+            let changes = try? StoreAPI.session.storeEnumerateChangesToContainer(withIdentifier: identifier, from: anchor, num: count, inDomain: domainIdentifier),
             anchor < changes.anchor
         else {
             handler([], [], anchor, false)
@@ -248,7 +248,7 @@ class StoreDB {
         
         DispatchQueue.global().async {
             let taskId = "\(domainIdentifier)/\(item.id)"
-            let task = StoreBackgroundSession.backgroundSession.dataTask(withId: taskId, toCreateDirectory: item.name, parentId: parentId)
+            let task = StoreBackgroundSession.backgroundSession.dataTask(withId: taskId, toCreateDirectory: item.name, parentId: parentId, inDomain: domainIdentifier)
             if let fileManager = StoreDomains.domains[domainIdentifier]?.fileProviderManager {
                 fileManager.register(task, forItemWithIdentifier: item.itemIdentifier) { (error) in
                     task.resume()
@@ -334,7 +334,7 @@ class StoreDB {
         //uploadFile(atUrl: tmpFilePath, forItemWithId: item.id)
         DispatchQueue.global().async {
             let taskId = "\(domainIdentifier)/\(item.id)"
-            let task = StoreBackgroundSession.backgroundSession.uploadTask(withId: taskId, forFileAt: tmpFilePath, name: item.name, parentId: parent.id)
+            let task = StoreBackgroundSession.backgroundSession.uploadTask(withId: taskId, forFileAt: tmpFilePath, name: item.name, parentId: parent.id, inDomain: domainIdentifier)
             if let fileManager = StoreDomains.domains[domainIdentifier]?.fileProviderManager {
                 fileManager.register(task, forItemWithIdentifier: item.itemIdentifier) { (error) in
                     task.resume()
